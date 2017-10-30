@@ -92,9 +92,16 @@ ggplot(OCRapp, aes(x = Date, y = MonthlyAve, group = year, color = year)) +
 OCRapp1 <- OCRapp[-which(OCRapp$SchoolYear=="Spring/Summer" | is.na(OCRapp$SchoolYear)==T),]
 
 ggplot(OCRapp1, aes(x = SchoolYear, y = Job..Applicants, fill = year)) + 
-  geom_bar(stat = "identity") +
+  geom_bar(stat = "identity", position = "dodge") +
   ylab("Job Applications") +
   ggtitle("Total Job Applications for Each School Year: 2014-2018")
+
+
+ggplot(OCRapp1, aes(x = month, y = MonthlyAve, group = SchoolYear, color = year)) + 
+  geom_line() +
+  ylab("Job Applications") +
+  ggtitle("Monthly Average Applications per Job: 2014 - 2018")
+
 
 OCRapp %>%
   group_by(SchoolYear) %>%
