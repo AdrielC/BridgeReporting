@@ -8,7 +8,6 @@ library(dplyr)
 library(RGoogleAnalytics)
 
 ### Google Analytics Import
-setwd("~/Desktop/Giant/Clients/CardioMems")
 
 token <- Auth("992211492004-p7melvhcdt081i26dpojf7bjh28co6al.apps.googleusercontent.com", "0B7-3WnbUiDZqz4jpW9a15Ed")
 
